@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import React from 'react'
 
 const AppIcon = ({ name, size= 40, backgroundColor= "#000", iconColor="#fff"}) => {

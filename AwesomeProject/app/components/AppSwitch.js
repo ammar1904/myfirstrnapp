@@ -1,4 +1,4 @@
-import { StyleSheet, Switch, Text, View } from 'react-native'
+import { StyleSheet, Switch, View } from 'react-native'
 import React, { useState } from 'react'
 
 const AppSwitch = () => {

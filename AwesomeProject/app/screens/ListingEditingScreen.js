@@ -8,6 +8,7 @@ import AppFormPicker from "../components/AppFormPicker";
 import SubmitButton from "../components/SubmitButton";
 
 import Screen from "../components/Screen";
+import CategoryPickerItem from "../components/CategoryPickerItem";
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(1).label("Title"),
@@ -17,9 +18,9 @@ const validationSchema = Yup.object().shape({
 });
 
 const categories = [
-  { label: "Furniture", value: 1 },
-  { label: "Clothing", value: 2 },
-  { label: "Camera", value: 3 },
+  { label: "Furniture", value: 1 , backgroundColor:'red', AppIcon:'apps' },
+  { label: "Clothing", value: 2 , backgroundColor:'green', AppIcon:'email' },
+  { label: "Camera", value: 3 , backgroundColor:'blue', AppIcon:'lock' },
 ];
 
 function ListingEditingScreen() {
@@ -41,8 +42,9 @@ function ListingEditingScreen() {
           maxLength={8}
           name="price"
           placeholder="Price"
+          width={120}
         />
-        <AppFormPicker items={categories} name="category" placeholder="Category" />
+        <AppFormPicker items={categories} name="category" numberOfColumns={3} PickerItemComponent={CategoryPickerItem} placeholder="Category" width="50%" />
         <AppFormField
           maxLength={255}
           multiline
