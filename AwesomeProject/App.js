@@ -16,6 +16,7 @@ import AppIcon from './app/components/AppIcon';
 import ListItem from './app/components/ListItem';
 import AccountScreen from './app/screens/AccountScreen';
 import ListingScreen from './app/screens/ListingScreen';
+import ListingEditingScreen from './app/screens/ListingEditingScreen';
 
 const App = () => {
 
@@ -52,7 +53,7 @@ const App = () => {
         onSelectItem={ (item) => setCategory(item)}   
         items={categories} placeholder={'Category'} />
       <AppTextInput placeholder={'Email'}/> */}
-      <LoginScreen />
+      {/* <LoginScreen /> */}
       {/* <Screen>
         <ListItem 
           title="My title" 
@@ -61,6 +62,7 @@ const App = () => {
       </Screen> */}
       {/* <AccountScreen /> */}
       {/* <ListingScreen /> */}
+      <ListingEditingScreen />
     </SafeAreaView>
   )
 }
