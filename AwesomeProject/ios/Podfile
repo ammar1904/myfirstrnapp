@@ -40,4 +40,14 @@ target 'AwesomeProject' do
     )
     __apply_Xcode_12_5_M1_post_install_workaround(installer)
   end
+  
+  platform :ios, '8.0'
+  use_frameworks!
+
+  target 'MyApp' do
+    pod 'AFNetworking', '~> 2.6'
+    pod 'ORStackView', '~> 3.0'
+    pod 'SwiftyJSON', '~> 2.3'
+  end
+  
 end

@@ -17,20 +17,53 @@ import ListItem from './app/components/ListItem';
 import AccountScreen from './app/screens/AccountScreen';
 import ListingScreen from './app/screens/ListingScreen';
 import ListingEditingScreen from './app/screens/ListingEditingScreen';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import RegisterScreen from './app/screens/RegisterScreen';
+import CustomButton from './app/practice/CustomButton';
+import CustomCard from './app/practice/CustomCard';
+import CustomAccountScreen from './app/practice/CustomAccountScreen';
+
+// const Tweets = () => (
+//   <Screen>
+//     <Text>Tweets</Text>
+//   </Screen>
+// )
+
+// const TweetDetails = () => (
+//   <Screen>
+//     <Text>Tweet Details</Text>
+//   </Screen>
+// )
+
+// const Stack = createNativeStackNavigator()
+// const StackNavigator = () => (
+//   <Stack.Navigator>
+//     <Stack.Screen name="Tweets" component={Tweets}/>
+//     <Stack.Screen name="TweetDetails" component={TweetDetails}/>
+//   </Stack.Navigator>
+// )
 
 const App = () => {
 
-  const [firstName, setFirstName] = useState("");
+  // const [firstName, setFirstName] = useState("");
 
-  const categories = [
-    { label: "Furniture", value: 1 },
-    { label: "Clothing", value: 2 },
-    { label: "Cameras", value: 3 },
-  ]
+  // const categories = [
+  //   { label: "Furniture", value: 1 },
+  //   { label: "Clothing", value: 2 },
+  //   { label: "Cameras", value: 3 },
+  // ]
 
-  const [category, setCategory] = useState(categories[0])
+  // const [category, setCategory] = useState(categories[0])
 
   return (
+
+    // <>
+    //       <NavigationContainer>
+    //         <StackNavigator />
+    //   </NavigationContainer>
+    // </>
+
     <SafeAreaView style={styles.SafeAreaView}>
       {/* <WelcomeScreen/> */}
       {/* <ViewScreen/> */}
@@ -62,7 +95,9 @@ const App = () => {
       </Screen> */}
       {/* <AccountScreen /> */}
       {/* <ListingScreen /> */}
-      <ListingEditingScreen />
+      {/* <ListingEditingScreen /> */}
+      {/* <RegisterScreen /> */}
+      <CustomAccountScreen />
     </SafeAreaView>
   )
 }

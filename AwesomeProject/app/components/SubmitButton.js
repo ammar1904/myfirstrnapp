@@ -3,11 +3,11 @@ import React from 'react'
 import AppButton from './AppButton'
 import { useFormikContext } from 'formik'
 
-const SubmitButton = ({ title }) => {
+const SubmitButton = ({ title, style, color }) => {
 
     const { handleSubmit } = useFormikContext()
   return (
-    <AppButton title={title} onPress={handleSubmit} />
+    <AppButton color={color} style={style} title={title} onPress={handleSubmit} />
   )
 }
 

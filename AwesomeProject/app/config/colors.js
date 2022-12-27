@@ -7,5 +7,6 @@ export default{
     lightgray : "#d3d3d3",
     black : "#000",
     lightpink: "#faf0e6",
-    darkgray: "#a9a9a9"
+    darkgray: "#a9a9a9",
+    bgcolor: "#f8f4f4",
 }

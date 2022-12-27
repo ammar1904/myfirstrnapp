@@ -5,10 +5,12 @@ import * as Yup from 'yup'
 import AppFormField from '../components/AppFormField'
 import SubmitButton from '../components/SubmitButton'
 import AppForm from '../components/AppForm'
+import colors from '../config/colors'
 
 
 
 const validationSchema = Yup.object().shape({
+  name: Yup.string().required().label("Name"),  
   email: Yup.string().required().email().label("Email"),
   password: Yup.string().required().min(4).label("Password")
 })
@@ -16,15 +18,25 @@ const validationSchema = Yup.object().shape({
 const LoginScreen = () => {
   return (
     <Screen style={styles.container}> 
-        <Image
+        {/* <Image
         style={styles.logo} 
-        source={require('../assets/logored.png')}/>
+        source={require('../assets/logored.png')}/> */}
 
         <AppForm
-          initialValues={{ email: "", password: "" }}
+          initialValues={{ name: "", email: "", password: "" }}
           onSubmit={values => console.log(values)}
           validationSchema={validationSchema}
           >
+            <AppFormField
+            autoCapitalize="none"
+            autoCorrect={false} 
+            icon="name"
+            keyboardType="default"
+            name="name"
+            placeholder="username"
+            extContentType="name"
+          />
+
           <AppFormField
             autoCapitalize="none"
             autoCorrect={false} 
@@ -43,7 +55,7 @@ const LoginScreen = () => {
             secureTextEntry
             textContentType="password"
            />
-           <SubmitButton color="primary" title="Login" />
+           <SubmitButton color="secondary" style={styles.register} title="Register" />
           
         </AppForm>
 
@@ -65,5 +77,9 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         marginTop: 50,
         marginBottom: 20,
+    },
+
+    register: {
+        backgroundColor: colors.secondary
     }
 })

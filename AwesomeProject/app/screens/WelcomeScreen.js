@@ -1,5 +1,6 @@
 import React from 'react';
 import { ImageBackground, Text ,StyleSheet, View, Image } from 'react-native';
+import CustomButton from '../practice/CustomButton';
 
 function WelcomeScreen(props) {
     return (
@@ -13,8 +14,8 @@ function WelcomeScreen(props) {
                     <Text style={styles.text}>Sell what you don't need</Text>
                 </View>
 
-                    <View style={styles.buttonLogin}/>
-                    <View style={styles.buttonRegister}/>
+                <CustomButton title="Login" color="primary"/>
+                <CustomButton title="Register" color="secondary" />
 
 
         </ImageBackground>
@@ -38,7 +39,8 @@ const styles = StyleSheet.create({
     },
 
     text: {
-        fontSize:20
+        fontSize:20,
+        marginVertical: 20
     },
 
     buttonLogin:{
