@@ -9,4 +9,5 @@ export default{
     lightpink: "#faf0e6",
     darkgray: "#a9a9a9",
     bgcolor: "#f8f4f4",
+    yellow: "#ffff00"
 }

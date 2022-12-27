@@ -97,7 +97,7 @@ const App = () => {
       {/* <ListingScreen /> */}
       {/* <ListingEditingScreen /> */}
       {/* <RegisterScreen /> */}
-      <CustomAccountScreen />
+      {/* <CustomAccountScreen /> */}
     </SafeAreaView>
   )
 }
