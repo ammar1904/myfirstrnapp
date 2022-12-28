@@ -24,8 +24,12 @@ import CustomButton from './app/practice/Components/CustomButton';
 import CustomCard from './app/practice/Components/CustomCard';
 import CustomAccountScreen from './app/practice/Screens/CustomAccountScreen';
 import CustomListingScreen from './app/practice/Screens/CustomListingScreen';
+import CustomScreen from './app/practice/Components/CustomScreen';
+import CustomText from './app/practice/Components/CustomText';
 
 const App = () => {
+
+  const [firstName, setFirstName] = useState('')
 
   return (
     <SafeAreaView style={styles.SafeAreaView}>
@@ -37,8 +41,26 @@ const App = () => {
       {/* <ListingScreen /> */}
       {/* <ListingEditingScreen /> */}
       {/* <RegisterScreen /> */}
+
+      {/* ################################################################ My Practice ###################################################################### */}
+
       {/* <CustomAccountScreen /> */}
       {/* <CustomListingScreen /> */}
+      <CustomScreen>
+        <CustomText>{firstName}</CustomText>
+        <Text style={{color: "#ccc"}}>{firstName}</Text>
+        <TextInput 
+          onChangeText={text => setFirstName(text)}
+          placeholder="First Name"
+          style={{
+            borderBottomColor: "#ccc",
+            borderBottomWidth: 1,
+            color: "#ccc"
+          }}
+        />
+
+      </CustomScreen>
+
     </SafeAreaView>
   )
 }
@@ -46,7 +68,6 @@ const App = () => {
 
 const styles = StyleSheet.create({
   SafeAreaView: {
-    paddingTop: 100,
     flex: 1,
     backgroundColor: colors.bgcolor
   }
