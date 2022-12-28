@@ -1,6 +1,6 @@
 import React from 'react';
 import { ImageBackground, Text ,StyleSheet, View, Image } from 'react-native';
-import CustomButton from '../practice/CustomButton';
+import CustomButton from '../practice/Components/CustomButton';
 
 function WelcomeScreen(props) {
     return (

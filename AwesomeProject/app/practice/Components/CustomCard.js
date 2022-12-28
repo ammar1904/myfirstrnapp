@@ -1,13 +1,15 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import colors from '../config/colors'
+import colors from '../../config/colors'
 
-const CustomCard = ({ title, subTitle }) => {
+const CustomCard = ({ title, subTitle, image }) => {
   return (
     <View style={styles.container}>
-        <Image style={styles.image} source={require("../assets/jacket.jpeg")}/>
-        <Text style={styles.title} >{title}</Text>
-        <Text style={styles.subTitle }>{subTitle}</Text>
+        <Image style={styles.image} source={image}/>
+        <View style={styles.textContainer}>
+            <Text style={styles.title} >{title}</Text>
+            <Text style={styles.subTitle }>{subTitle}</Text>
+        </View>
     </View>
   )
 }
@@ -27,14 +29,16 @@ const styles = StyleSheet.create({
         height: 200,
     },
 
+    textContainer: {
+        padding: 10,
+    },
+
     title: {
         color: colors.black,
-        padding: 10
     }, 
 
     subTitle: {
-        color: colors.secondary,
-        padding
+        color: colors.secondary
     },
 
 })

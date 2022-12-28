@@ -1,6 +1,6 @@
 import { StyleSheet,Image, Text, View } from 'react-native'
 import React from 'react'
-import colors from '../config/colors'
+import colors from '../../config/colors'
 
 const CustomAccountComponent = ({ title, description, image}) => {
   return (

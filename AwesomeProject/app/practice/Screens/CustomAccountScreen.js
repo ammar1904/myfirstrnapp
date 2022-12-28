@@ -1,17 +1,19 @@
 import { FlatList, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import colors from '../config/colors'
-import CustomAccountComponent from './CustomAccountComponent'
-import CustomListItems from './CustomListItems'
+import colors from '../../config/colors'
+import CustomAccountComponent from '../Components/CustomAccountComponent'
+import CustomListItems from '../Components/CustomListItems'
 
 const CustomAccountScreen = () => {
 
     const menuItem = [
         {
-            title: 'My listings'
+            title: 'My listings',
+            color: "primary"
         },
         {
-            title: 'My Messages'
+            title: 'My Messages',
+            color: "secondary"
         }
     ]
 
@@ -19,7 +21,7 @@ const CustomAccountScreen = () => {
     <View style={styles.bg}>
     {/* // Account Deatils (image, name and email) */}
         <View>
-            <CustomAccountComponent title="ammar khan" description="ammarkhan1904@gmail.com" image={require("../assets/ammar.jpg")}/>
+            <CustomAccountComponent title="ammar khan" description="ammarkhan1904@gmail.com" image={require("../../assets/ammar.jpg")}/>
         </View>
     {/* // icon, my listing
     // icon, my messages
@@ -32,6 +34,7 @@ const CustomAccountScreen = () => {
                 renderItem={({ item }) => 
                     <CustomListItems 
                         title={item.title}
+                        color={item.color}
                     />}
             />
         </View>

@@ -20,84 +20,25 @@ import ListingEditingScreen from './app/screens/ListingEditingScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import RegisterScreen from './app/screens/RegisterScreen';
-import CustomButton from './app/practice/CustomButton';
-import CustomCard from './app/practice/CustomCard';
-import CustomAccountScreen from './app/practice/CustomAccountScreen';
-
-// const Tweets = () => (
-//   <Screen>
-//     <Text>Tweets</Text>
-//   </Screen>
-// )
-
-// const TweetDetails = () => (
-//   <Screen>
-//     <Text>Tweet Details</Text>
-//   </Screen>
-// )
-
-// const Stack = createNativeStackNavigator()
-// const StackNavigator = () => (
-//   <Stack.Navigator>
-//     <Stack.Screen name="Tweets" component={Tweets}/>
-//     <Stack.Screen name="TweetDetails" component={TweetDetails}/>
-//   </Stack.Navigator>
-// )
+import CustomButton from './app/practice/Components/CustomButton';
+import CustomCard from './app/practice/Components/CustomCard';
+import CustomAccountScreen from './app/practice/Screens/CustomAccountScreen';
+import CustomListingScreen from './app/practice/Screens/CustomListingScreen';
 
 const App = () => {
 
-  // const [firstName, setFirstName] = useState("");
-
-  // const categories = [
-  //   { label: "Furniture", value: 1 },
-  //   { label: "Clothing", value: 2 },
-  //   { label: "Cameras", value: 3 },
-  // ]
-
-  // const [category, setCategory] = useState(categories[0])
-
   return (
-
-    // <>
-    //       <NavigationContainer>
-    //         <StackNavigator />
-    //   </NavigationContainer>
-    // </>
-
     <SafeAreaView style={styles.SafeAreaView}>
       {/* <WelcomeScreen/> */}
       {/* <ViewScreen/> */}
       {/* <ListingDetailsScreen/> */}
       {/* <MessagesScreen/> */}
-      {/* <Screen>
-        <Text>{firstName}</Text>
-        <TextInput
-          placeholder='First Name' 
-          style={{
-            borderBottomWidth: 1,
-            borderBottomColor: colors.lightgray
-          }}
-          onChangeText={(text) => setFirstName(text)}/>
-      </Screen> */}
-      {/* <AppTextInput placeholder="Username" /> */}
-      {/* <AppSwitch /> */}
-      {/* <AppPicker 
-        selectedItem={category}
-        onSelectItem={ (item) => setCategory(item)}   
-        items={categories} placeholder={'Category'} />
-      <AppTextInput placeholder={'Email'}/> */}
-      {/* <LoginScreen /> */}
-      {/* <Screen>
-        <ListItem 
-          title="My title" 
-          subTitle="My subtitle"
-          ImageComponent={<AppIcon />}/>
-      </Screen> */}
       {/* <AccountScreen /> */}
       {/* <ListingScreen /> */}
       {/* <ListingEditingScreen /> */}
       {/* <RegisterScreen /> */}
       {/* <CustomAccountScreen /> */}
+      {/* <CustomListingScreen /> */}
     </SafeAreaView>
   )
 }
@@ -106,7 +47,8 @@ const App = () => {
 const styles = StyleSheet.create({
   SafeAreaView: {
     paddingTop: 100,
-    flex: 1
+    flex: 1,
+    backgroundColor: colors.bgcolor
   }
 })
 
