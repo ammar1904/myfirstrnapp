@@ -1,12 +1,12 @@
 import { StyleSheet,TextInput, View } from 'react-native'
 import React from 'react'
-import {MaterialCommunityIcons} from 'react-native-vector-icons'
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 import colors from '../../config/colors'
 
-const CustomTextInput = ({ icon, ...otherProps }) => {
+const CustomTextInput = ({ name, color, size, ...otherProps }) => {
   return (
     <View style={styles.container}>
-        {/* <MaterialCommunityIcons name={icon}/> */}
+        <MaterialCommunityIcons color={color} size={size} name={name} style={styles.icon} />
         <TextInput 
           style={styles.text}
           {...otherProps}
@@ -19,6 +19,7 @@ export default CustomTextInput
 
 const styles = StyleSheet.create({
     container: {
+        flexDirection: "row",
         backgroundColor: colors.lightgray,
         borderRadius: 25,
         width: "100%",
@@ -26,10 +27,13 @@ const styles = StyleSheet.create({
         marginVertical: 10
     },
 
+    icon: {
+      marginTop: 10,
+      marginRight: 10,
+    },
+
     text: {
       fontSize: 18,
       color: colors.black
     }
-
-
 })

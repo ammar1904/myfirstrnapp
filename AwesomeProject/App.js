@@ -26,7 +26,6 @@ import CustomAccountScreen from './app/practice/Screens/CustomAccountScreen';
 import CustomListingScreen from './app/practice/Screens/CustomListingScreen';
 import CustomScreen from './app/practice/Components/CustomScreen';
 import CustomText from './app/practice/Components/CustomText';
-import { MaterialCommunityIcons } from 'react-native-vector-icons'
 import CustomTextInput from './app/practice/Components/CustomTextInput';
 
 const App = () => {
@@ -48,7 +47,7 @@ const App = () => {
 
       {/* <CustomAccountScreen /> */}
       {/* <CustomListingScreen /> */}
-      <CustomTextInput name="email" placeholder="Username" />
+      <CustomTextInput name="email" placeholder="Username" color="black" size={30} />
     </SafeAreaView>
   )
 }
