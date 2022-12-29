@@ -1,10 +1,11 @@
-import { Button, Modal, StyleSheet, TextInput, TouchableOpacity, View } from 'react-native'
+import { Button, FlatList, Modal, StyleSheet, TextInput, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 import colors from '../../config/colors'
 import CustomText from './CustomText'
+import PickerItems from './PickerItems'
 
-const CustomAppPicker = ({ name, color, placeholder, size, ...otherProps }) => {
+const CustomAppPicker = ({ name, color, placeholder, size, items, ...otherProps }) => {
 
     const [modalVisible, setModalVisible] = useState(false)
 
@@ -19,6 +20,11 @@ const CustomAppPicker = ({ name, color, placeholder, size, ...otherProps }) => {
     </TouchableOpacity>
     <Modal visible={modalVisible} animationType="slide">
         <Button title="Close" onPress={() => setModalVisible(false)} />
+        <FlatList
+            data={items}
+            keyExtractor={(item) => item.value.toString()}
+            renderItem={({ item }) => <PickerItems label={item.label} onPress={() => console.log(item)}/> } 
+        />
     </Modal>
     </>
   )
