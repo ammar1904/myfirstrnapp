@@ -1,5 +1,5 @@
-import { StyleSheet,TextInput, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, TextInput, View } from 'react-native'
+import React, { useState } from 'react'
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 import colors from '../../config/colors'
 
@@ -10,7 +10,7 @@ const CustomTextInput = ({ name, color, size, ...otherProps }) => {
         <TextInput 
           style={styles.text}
           {...otherProps}
-        />
+          />
     </View>
   )
 }
