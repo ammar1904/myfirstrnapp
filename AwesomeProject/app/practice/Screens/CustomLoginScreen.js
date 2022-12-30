@@ -1,14 +1,11 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
-import React, { useState } from 'react'
+import { Image, StyleSheet } from 'react-native'
+import React from 'react'
 import CustomScreen from '../Components/CustomScreen'
 import CustomTextInput from '../Components/CustomTextInput'
 import CustomButton from '../Components/CustomButton'
-import colors from '../../config/colors'
+import { Formik } from 'formik'
 
 const CustomLoginScreen = () => {
-    
-    const [email, setEmail] = useState()
-    const [password, setPassword] = useState()
 
   return (
     <CustomScreen style={styles.conatainer}>
@@ -16,32 +13,40 @@ const CustomLoginScreen = () => {
             style={styles.logo}
             source={require('../../assets/logored.png')}
         />
-        <CustomTextInput 
-            autoCapitalize="none"
-            autoCorrect={false}
-            keyboardType="email-address"
-            onChangeText={(text) => setEmail(text)}
-            name="email"
-            color="black"
-            size={24}
-            placeholder="Email Address"
-        />
-        <CustomTextInput 
-            autoCapitalize="none"
-            autoCorrect={false}
-            keyboardType="default"
-            onChangeText={(text) => setPassword(text)}
-            name="lock"
-            color="black"
-            size={24}
-            placeholder="Password"
-            secureTextEntry
-
-        />
-        <CustomButton 
-            title="login"
-            onPress={() => console.log(email, password)}
-        />
+        <Formik
+            initialValues={{email: '', password: ''}}
+            onSubmit={(values) => console.log(values)}
+        >
+            { ({handleChange, handleSubmit}) => (
+                <>
+                    <CustomTextInput 
+                        autoCapitalize="none"
+                        autoCorrect={false}
+                        keyboardType="email-address"
+                        onChangeText={handleChange("email")}
+                        name="email"
+                        color="black"
+                        size={24}
+                        placeholder="Email Address"
+                    />
+                    <CustomTextInput 
+                        autoCapitalize="none"
+                        autoCorrect={false}
+                        keyboardType="default"
+                        onChangeText={handleChange("password")}
+                        name="lock"
+                        color="black"
+                        size={24}
+                        placeholder="Password"
+                        secureTextEntry
+                    />
+                    <CustomButton 
+                        title="login"
+                        onPress={handleSubmit}
+                    />
+                </>
+            ) }  
+        </Formik>   
     </CustomScreen>
   )
 }
