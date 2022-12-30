@@ -26,31 +26,33 @@ const CustomLoginScreen = () => {
             onSubmit={(values) => console.log(values)}
             validationSchema={validationSchema}
         >
-            { ({handleChange, handleSubmit, errors }) => (
+            { ({handleChange, handleSubmit, errors, setFieldTouched, touched }) => (
                 <>
                     <CustomTextInput 
                         autoCapitalize="none"
                         autoCorrect={false}
                         keyboardType="email-address"
                         onChangeText={handleChange("email")}
+                        onBlur={()=> setFieldTouched("email")}
                         name="email"
                         color="black"
                         size={24}
                         placeholder="Email Address"
                     />
-                    <CustomErrorMessage error={errors.email}/>
+                    <CustomErrorMessage error={errors.email} visible={touched.email}/>
                     <CustomTextInput 
                         autoCapitalize="none"
                         autoCorrect={false}
                         keyboardType="default"
                         onChangeText={handleChange("password")}
+                        onBlur={() => setFieldTouched("password")}
                         name="lock"
                         color="black"
                         size={24}
                         placeholder="Password"
                         secureTextEntry
                     />
-                    <CustomErrorMessage error={errors.password}/>
+                    <CustomErrorMessage error={errors.password} visible={touched.password}/>
                     <CustomButton 
                         title="login"
                         onPress={handleSubmit}

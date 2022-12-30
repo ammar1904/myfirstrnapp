@@ -2,9 +2,9 @@ import { StyleSheet } from 'react-native'
 import React from 'react'
 import CustomText from './CustomText'
 
-const CustomErrorMessage = ({ error }) => {
-    if (!error) return null
-    
+const CustomErrorMessage = ({ error, visible }) => {
+    if (!visible || !error) return null
+
   return (
     <CustomText style={styles.error}>{error}</CustomText>
   )
