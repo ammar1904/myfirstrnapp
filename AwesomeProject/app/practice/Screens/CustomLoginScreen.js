@@ -1,12 +1,10 @@
 import { Image, StyleSheet } from 'react-native'
 import React from 'react'
 import CustomScreen from '../Components/CustomScreen'
-import CustomTextInput from '../Components/CustomTextInput'
 import CustomButton from '../Components/CustomButton'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
-import CustomText from '../Components/CustomText'
-import CustomErrorMessage from '../Components/CustomErrorMessage'
+import CustomFormField from '../Components/CustomFormField'
 
 const validationSchema = Yup.object({
     email: Yup.string().required().email().label("Email"),
@@ -26,33 +24,29 @@ const CustomLoginScreen = () => {
             onSubmit={(values) => console.log(values)}
             validationSchema={validationSchema}
         >
-            { ({handleChange, handleSubmit, errors, setFieldTouched, touched }) => (
+            { ({ handleSubmit }) => (
                 <>
-                    <CustomTextInput 
+                    <CustomFormField
                         autoCapitalize="none"
                         autoCorrect={false}
                         keyboardType="email-address"
-                        onChangeText={handleChange("email")}
-                        onBlur={()=> setFieldTouched("email")}
                         name="email"
+                        iconName="email"
                         color="black"
                         size={24}
                         placeholder="Email Address"
                     />
-                    <CustomErrorMessage error={errors.email} visible={touched.email}/>
-                    <CustomTextInput 
+                    <CustomFormField
                         autoCapitalize="none"
                         autoCorrect={false}
                         keyboardType="default"
-                        onChangeText={handleChange("password")}
-                        onBlur={() => setFieldTouched("password")}
-                        name="lock"
+                        name="password"
+                        iconName="lock"
                         color="black"
                         size={24}
                         placeholder="Password"
                         secureTextEntry
                     />
-                    <CustomErrorMessage error={errors.password} visible={touched.password}/>
                     <CustomButton 
                         title="login"
                         onPress={handleSubmit}
