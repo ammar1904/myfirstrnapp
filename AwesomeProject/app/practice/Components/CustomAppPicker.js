@@ -5,7 +5,7 @@ import colors from '../../config/colors'
 import CustomText from './CustomText'
 import PickerItems from './PickerItems'
 
-const CustomAppPicker = ({ name, color, placeholder, size, items, ...otherProps }) => {
+const CustomAppPicker = ({ name, color, placeholder, size, onSelectItem, items, selectedItem,  ...otherProps }) => {
 
     const [modalVisible, setModalVisible] = useState(false)
 
@@ -14,7 +14,7 @@ const CustomAppPicker = ({ name, color, placeholder, size, items, ...otherProps 
     <TouchableOpacity onPress={ () => setModalVisible(true) }>
     <View style={styles.container}>
         <MaterialCommunityIcons color={color} size={size} name={name} style={styles.icon} placeholder={placeholder}/>
-        <CustomText style={styles.text}>{placeholder}</CustomText>
+        <CustomText style={styles.text}>{selectedItem ? selectedItem.label : placeholder}</CustomText>
         <MaterialCommunityIcons name="chevron-down" color="black" size={30} style={styles.chevron} />
     </View>
     </TouchableOpacity>
@@ -23,7 +23,12 @@ const CustomAppPicker = ({ name, color, placeholder, size, items, ...otherProps 
         <FlatList
             data={items}
             keyExtractor={(item) => item.value.toString()}
-            renderItem={({ item }) => <PickerItems label={item.label} onPress={() => console.log(item)}/> } 
+            renderItem={({ item }) => <PickerItems label={item.label} onPress={() => {
+                setModalVisible(false)
+                onSelectItem(item)
+                }
+            }
+        />} 
         />
     </Modal>
     </>
