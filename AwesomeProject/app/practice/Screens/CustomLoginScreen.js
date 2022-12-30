@@ -4,6 +4,13 @@ import CustomScreen from '../Components/CustomScreen'
 import CustomTextInput from '../Components/CustomTextInput'
 import CustomButton from '../Components/CustomButton'
 import { Formik } from 'formik'
+import * as Yup from 'yup'
+import CustomText from '../Components/CustomText'
+
+const validationSchema = Yup.object({
+    email: Yup.string().required().email().label("Email"),
+    password: Yup.string().required().min(4).label("Password")
+})
 
 const CustomLoginScreen = () => {
 
@@ -16,8 +23,9 @@ const CustomLoginScreen = () => {
         <Formik
             initialValues={{email: '', password: ''}}
             onSubmit={(values) => console.log(values)}
+            validationSchema={validationSchema}
         >
-            { ({handleChange, handleSubmit}) => (
+            { ({handleChange, handleSubmit, errors }) => (
                 <>
                     <CustomTextInput 
                         autoCapitalize="none"
@@ -29,6 +37,7 @@ const CustomLoginScreen = () => {
                         size={24}
                         placeholder="Email Address"
                     />
+                    <CustomText style={{ color: 'red'}}>{errors.email}</CustomText>
                     <CustomTextInput 
                         autoCapitalize="none"
                         autoCorrect={false}
@@ -40,6 +49,7 @@ const CustomLoginScreen = () => {
                         placeholder="Password"
                         secureTextEntry
                     />
+                    <CustomText style={{ color: 'red'}}>{errors.password}</CustomText>
                     <CustomButton 
                         title="login"
                         onPress={handleSubmit}
