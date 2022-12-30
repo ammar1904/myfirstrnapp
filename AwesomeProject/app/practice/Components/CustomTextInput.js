@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
 
     text: {
       fontSize: 18,
-      color: colors.black
+      color: colors.black,
+      flex: 1,
     }
 })
