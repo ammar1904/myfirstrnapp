@@ -5,6 +5,7 @@ import CustomButton from '../Components/CustomButton'
 import { Formik } from 'formik'
 import * as Yup from 'yup'
 import CustomFormField from '../Components/CustomFormField'
+import CustomForm from '../Components/CustomForm'
 
 const validationSchema = Yup.object({
     userName: Yup.string().required().label("Name"),
@@ -16,51 +17,47 @@ const CustomRegisterScreen = () => {
 
   return (
     <CustomScreen style={styles.conatainer}>
-        <Formik
+        <CustomForm
             initialValues={{userName: '' ,email: '', password: ''}}
             onSubmit={(values) => console.log(values)}
             validationSchema={validationSchema}
-        >
-            { ({ handleSubmit }) => (
-                <>
-                    <CustomFormField
-                        autoCapitalize="none"
-                        autoCorrect={false}
-                        keyboardType="default"
-                        name="userName"
-                        iconName="account"
-                        color="black"
-                        size={24}
-                        placeholder="name"
-                    />
-                    <CustomFormField
-                        autoCapitalize="none"
-                        autoCorrect={false}
-                        keyboardType="email-address"
-                        name="email"
-                        iconName="email"
-                        color="black"
-                        size={24}
-                        placeholder="Email Address"
-                    />
-                    <CustomFormField
-                        autoCapitalize="none"
-                        autoCorrect={false}
-                        keyboardType="default"
-                        name="password"
-                        iconName="lock"
-                        color="black"
-                        size={24}
-                        placeholder="Password"
-                        secureTextEntry
-                    />
-                    <CustomButton 
-                        title="Register"
-                        onPress={handleSubmit}
-                    />
-                </>
-            ) }  
-        </Formik>   
+        > 
+            <CustomFormField
+                autoCapitalize="none"
+                autoCorrect={false}
+                keyboardType="default"
+                name="userName"
+                iconName="account"
+                color="black"
+                size={24}
+                placeholder="name"
+            />
+            <CustomFormField
+                autoCapitalize="none"
+                autoCorrect={false}
+                keyboardType="email-address"
+                name="email"
+                iconName="email"
+                color="black"
+                size={24}
+                placeholder="Email Address"
+            />
+            <CustomFormField
+                autoCapitalize="none"
+                autoCorrect={false}
+                keyboardType="default"
+                name="password"
+                iconName="lock"
+                color="black"
+                size={24}
+                placeholder="Password"
+                secureTextEntry
+            />
+            <CustomButton 
+                title="Register"
+                //onPress={handleSubmit}
+            />
+        </CustomForm>   
     </CustomScreen>
   )
 }
