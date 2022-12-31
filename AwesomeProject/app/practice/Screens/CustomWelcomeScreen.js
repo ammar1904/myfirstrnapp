@@ -6,6 +6,7 @@ import CustomText from '../Components/CustomText';
 function CustomWelcomeScreen() {
     return (
         <ImageBackground
+            blurRadius={5}
             style={styles.background}
             source={require("../../assets/welbgimg.jpeg")}>
                 <View style={styles.logoContainer}>
@@ -26,10 +27,12 @@ const styles = StyleSheet.create({
         alignItems:"center",
         padding: 15
     },
+
     logo: {
         width:100,
         height:100,
     },
+
     logoContainer:{
         alignItems:"center",
         position:"absolute",
