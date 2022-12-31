@@ -23,7 +23,7 @@ const CustomAppPicker = ({ name, color, placeholder, size, onSelectItem, items, 
         <FlatList
             data={items}
             keyExtractor={(item) => item.value.toString()}
-            renderItem={({ item }) => <PickerItems label={item.label} onPress={() => {
+            renderItem={({ item }) => <PickerItems item={item} label={item.label} onPress={() => {
                 setModalVisible(false)
                 onSelectItem(item)
                 }
@@ -41,27 +41,21 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: "row",
         backgroundColor: colors.lightgray,
-        borderRadius: 25,
+        borderRadius: 30,
         width: "100%",
+        alignItems:'center',
+        justifyContent:'center',
         padding: 15,
         marginVertical: 10,
     },
 
     icon: {
-        marginTop: 10,
-        marginRight: 10,
+        paddingRight:10
     },
 
     text: {
         fontSize: 18,
         color: colors.black,
-        marginTop: 10,
-        marginBottom: 10,
         flex: 1,
     },
-
-    chevron: {
-        marginTop: 10,
-        marginBottom: 10,
-    }
 })

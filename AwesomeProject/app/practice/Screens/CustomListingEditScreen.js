@@ -5,61 +5,51 @@ import * as Yup from 'yup'
 import CustomFormField from '../Components/CustomFormField'
 import CustomForm from '../Components/CustomForm'
 import CustomSubmitButton from '../Components/CustomSubmitButton'
+import CustomFormPicker from '../Components/CustomFormPicker'
 
-const validationSchema = Yup.object({
-    title: Yup.string().required().min(10).label("Title"),
-    price: Yup.string().required().min(5).label("Price"),
-    category: Yup.string().required().nullable().label("Category"),
-    description: Yup.string().optional().label("Description")
+const validationSchema = Yup.object().shape({
+    title: Yup.string().required().min(1).label("Title"),
+    price: Yup.number().required().min(1).max(10000).label("Price"),
+    category: Yup.object().required().nullable().label("Category"),
+    description: Yup.string().label("Description")
 })
+
+const categories = [
+    { label: "Furniture", value: 1},
+    { label: "Clothing", value: 2},
+    { label: "Cameras", value: 3}, 
+] 
 
 const CustomListingEditScreen = () => {
 
   return (
     <CustomScreen style={styles.conatainer}>
         <CustomForm
-            initialValues={{title: '', price: '', category: '', description: ''}}
+            initialValues={{title: '', price: '', category: null, description: ''}}
             onSubmit={(values) => console.log(values)}
             validationSchema={validationSchema}
         > 
             <CustomFormField
-                autoCapitalize="none"
-                autoCorrect={false}
-                keyboardType="default"
+                maxLength={255}
                 name="title"
-                //iconName="account"
-                //color="black"
-                //size={24}
                 placeholder="Title"
             />
             <CustomFormField
-                autoCapitalize="none"
-                autoCorrect={false}
-                keyboardType="number-pad"
-                name="price"
-                //iconName="email"
-                //color="black"
-                //size={24}
+                keyboardType="numeric"
+                maxLength={8}
+                name="price" 
                 placeholder="Price"
             />
-            <CustomFormField
-                autoCapitalize="none"
-                autoCorrect={false}
-                keyboardType="default"
+            <CustomFormPicker 
+                items={categories}
                 name="category"
-                iconName="chevron-down"
-                color="black"
-                size={24}
                 placeholder="Category"
             />
             <CustomFormField
-                autoCapitalize="none"
-                autoCorrect={false}
-                keyboardType="default"
+                maxLength={255}
+                multiline
                 name="description"
-                //iconName="chevron-down"
-                //color="black"
-                //size={24}
+                numberOfLines={3}  
                 placeholder="Description"
             />
             <CustomSubmitButton title="Post" />
