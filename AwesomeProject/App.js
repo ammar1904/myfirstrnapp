@@ -32,6 +32,7 @@ import CustomLoginScreen from './app/practice/Screens/CustomLoginScreen';
 import CustomRegisterScreen from './app/practice/Screens/CustomRegisterScreen';
 import CustomListingEditScreen from './app/practice/Screens/CustomListingEditScreen';
 import CustomMessagesScreen from './app/practice/Screens/CustomMessagesScreen';
+import CustomWelcomeScreen from './app/practice/Screens/CustomWelcomeScreen';
 
 const App = () => {
 
@@ -49,8 +50,8 @@ const App = () => {
       {/* <RegisterScreen /> */}
 
       {/* ################################################################ My Practice ###################################################################### */}
-
-      <CustomAccountScreen />
+      <CustomWelcomeScreen />
+      {/* <CustomAccountScreen /> */}
       {/* <CustomListingScreen /> */}
       {/* <CustomMessagesScreen /> */}
       {/* <CustomTextInput name="email" placeholder="Username" color="black" size={30} /> */}
