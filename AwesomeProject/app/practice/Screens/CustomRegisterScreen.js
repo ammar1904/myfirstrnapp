@@ -1,11 +1,10 @@
 import { StyleSheet } from 'react-native'
 import React from 'react'
 import CustomScreen from '../Components/CustomScreen'
-import CustomButton from '../Components/CustomButton'
-import { Formik } from 'formik'
 import * as Yup from 'yup'
 import CustomFormField from '../Components/CustomFormField'
 import CustomForm from '../Components/CustomForm'
+import CustomSubmitButton from '../Components/CustomSubmitButton'
 
 const validationSchema = Yup.object({
     userName: Yup.string().required().label("Name"),
@@ -53,10 +52,7 @@ const CustomRegisterScreen = () => {
                 placeholder="Password"
                 secureTextEntry
             />
-            <CustomButton 
-                title="Register"
-                //onPress={handleSubmit}
-            />
+            <CustomSubmitButton title="Register" />
         </CustomForm>   
     </CustomScreen>
   )

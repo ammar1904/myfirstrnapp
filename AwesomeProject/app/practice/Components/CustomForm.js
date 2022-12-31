@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 import React from 'react'
 import { Formik } from 'formik'
 
-const CustomForm = ({ initialValues, onSubmit, validationSchema, childern }) => {
+const CustomForm = ({ initialValues, onSubmit, validationSchema, children }) => {
 
   return (
     <Formik
@@ -12,7 +12,7 @@ const CustomForm = ({ initialValues, onSubmit, validationSchema, childern }) => 
     >
         { () => (
             <>
-            {childern}
+            {children}
             </>
         )}
     </Formik>
