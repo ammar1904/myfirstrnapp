@@ -14,7 +14,8 @@ const CustomAppPicker = ({ name, color, placeholder, size, onSelectItem, items, 
     <TouchableOpacity onPress={ () => setModalVisible(true) }>
     <View style={styles.container}>
         <MaterialCommunityIcons color={color} size={size} name={name} style={styles.icon} placeholder={placeholder}/>
-        <CustomText style={styles.text}>{selectedItem ? selectedItem.label : placeholder}</CustomText>
+        { selectedItem ? (<CustomText style={styles.text}>{selectedItem.label}</CustomText>)
+                        : (<CustomText style={styles.placeholder}>{placeholder}</CustomText>) }
         <MaterialCommunityIcons name="chevron-down" color="black" size={30} style={styles.chevron} />
     </View>
     </TouchableOpacity>
@@ -43,14 +44,18 @@ const styles = StyleSheet.create({
         backgroundColor: colors.lightgray,
         borderRadius: 30,
         width: "100%",
-        alignItems:'center',
-        justifyContent:'center',
         padding: 15,
         marginVertical: 10,
     },
 
     icon: {
         paddingRight:10
+    },
+
+    placeholder: {
+        fontSize: 18,
+        color: colors.black,
+        flex: 1
     },
 
     text: {

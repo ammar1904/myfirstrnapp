@@ -7,7 +7,8 @@ const CustomTextInput = ({ iconName, color, size, ...otherProps }) => {
   return (
     <View style={styles.container}>
         <MaterialCommunityIcons color={colors[color]} size={size} name={iconName} style={styles.icon} />
-        <TextInput 
+        <TextInput
+          placeholderTextColor={colors.black} 
           style={styles.text}
           {...otherProps}
           />
