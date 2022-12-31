@@ -29,6 +29,7 @@ import CustomText from './app/practice/Components/CustomText';
 import CustomTextInput from './app/practice/Components/CustomTextInput';
 import ZenPractice from './app/practice/Components/ZenPractice';
 import CustomLoginScreen from './app/practice/Screens/CustomLoginScreen';
+import CustomRegisterScreen from './app/practice/Screens/CustomRegisterScreen';
 
 const App = () => {
 
@@ -50,7 +51,8 @@ const App = () => {
       {/* <CustomAccountScreen /> */}
       {/* <CustomListingScreen /> */}
       {/* <CustomTextInput name="email" placeholder="Username" color="black" size={30} /> */}
-      <CustomLoginScreen />
+      {/* <CustomLoginScreen /> */}
+      <CustomRegisterScreen />
       {/* <ZenPractice /> */}
     </SafeAreaView>
   )
