@@ -55,7 +55,7 @@ const App = () => {
       {/* <CustomWelcomeScreen /> */}
       {/* <CustomViewScreen /> */}
       {/* <CustomAccountScreen /> */}
-      {/* <CustomListingScreen /> */}
+      <CustomListingScreen />
       {/* <CustomMessagesScreen /> */}
       {/* <CustomTextInput name="email" placeholder="Username" color="black" size={30} /> */}
       {/* <CustomLoginScreen /> */}
