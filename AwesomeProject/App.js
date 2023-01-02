@@ -34,6 +34,7 @@ import CustomListingEditScreen from './app/practice/Screens/CustomListingEditScr
 import CustomMessagesScreen from './app/practice/Screens/CustomMessagesScreen';
 import CustomWelcomeScreen from './app/practice/Screens/CustomWelcomeScreen';
 import CustomViewScreen from './app/practice/Screens/CustomViewScreen';
+import CustomEditScreen from './app/practice/Components/CustomEditScreen';
 
 const App = () => {
 
@@ -52,7 +53,7 @@ const App = () => {
 
       {/* ################################################################ My Practice ###################################################################### */}
       {/* <CustomWelcomeScreen /> */}
-      <CustomViewScreen />
+      {/* <CustomViewScreen /> */}
       {/* <CustomAccountScreen /> */}
       {/* <CustomListingScreen /> */}
       {/* <CustomMessagesScreen /> */}
@@ -60,6 +61,7 @@ const App = () => {
       {/* <CustomLoginScreen /> */}
       {/* <CustomRegisterScreen /> */}
       {/* <CustomListingEditScreen /> */}
+      {/* <CustomEditScreen /> */}
       {/* <ZenPractice /> */}
     </SafeAreaView>
   )
