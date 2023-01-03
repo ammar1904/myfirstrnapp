@@ -4,9 +4,9 @@ import React from 'react'
 const CustomScreen = ({ children, style }) => {
   return (
     <SafeAreaView style={[styles.customScreen, style]}>
-        <View style={[styles.view, style]}>
-            {children}
-        </View>
+      <View style={[styles.view, style]}>
+          {children}
+      </View>
 
     </SafeAreaView>
   )

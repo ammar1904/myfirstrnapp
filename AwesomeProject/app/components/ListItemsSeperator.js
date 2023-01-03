@@ -4,14 +4,14 @@ import colors from '../config/colors'
 
 const ListItemsSeperator = () => {
   return (
-    <View style={styles.seperator}/>
+    <View style={styles.separator}/>
   )
 }
 
 export default ListItemsSeperator
 
 const styles = StyleSheet.create({
-    seperator: {
+    separator: {
         width: "100%",
         height: 1,
         backgroundColor: colors.grey

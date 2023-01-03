@@ -55,10 +55,10 @@ const App = () => {
       {/* ################################################################ My Practice ###################################################################### */}
       {/* <CustomWelcomeScreen /> */}
       {/* <CustomViewScreen /> */}
-      <CustomListingDetailsScreen />
+      {/* <CustomListingDetailsScreen /> */}
       {/* <CustomAccountScreen /> */}
       {/* <CustomListingScreen /> */}
-      {/* <CustomMessagesScreen /> */}
+      <CustomMessagesScreen />
       {/* <CustomTextInput name="email" placeholder="Username" color="black" size={30} /> */}
       {/* <CustomLoginScreen /> */}
       {/* <CustomRegisterScreen /> */}

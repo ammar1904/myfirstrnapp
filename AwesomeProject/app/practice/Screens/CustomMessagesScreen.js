@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { FlatList } from 'react-native'
 import CustomListItems from '../Components/CustomListItems'
 import CustomScreen from '../Components/CustomScreen'
-//import ListItemsSeperator from '../components/ListItemsSeperator'
+import CustomListItemsSeperator from '../Components/CustomListItemsSeperator'
 
 const messages = [
     {
@@ -22,32 +22,33 @@ const messages = [
 
 const CustomMessagesScreen = () => {
 
-    const [refreshing, setRefreshing] = useState(false)
+    //const [refreshing, setRefreshing] = useState(false)
   return (
 
     <CustomScreen>
         <FlatList
-        data={messages}
-        keyExtractor={messages => messages.id.toString()}
-        renderItem={({ item }) => 
-            <CustomListItems 
-            title={item.title}
-            subTitle={item.description}
-            image={item.image}
-            onPress={() => console.log("message selected", item)}    
-            />}
-        //ItemSeparatorComponent={ListItemsSeperator}
-        refreshing={refreshing}
-        onRefresh={() => {
-            messages([
-                {
-                    id: 1,
-                    title: "Ammar",
-                    description: "Edge Runner",
-                    image: require("../../assets/ammar.jpg")
-                },
-            ])
-        }}
+            data={messages}
+            keyExtractor={messages => messages.id.toString()}
+            renderItem={({ item }) => ( 
+                <CustomListItems 
+                    title={item.title}
+                    subTitle={item.description}
+                    image={item.image}
+                    onPress={() => console.log("message selected", item)}    
+                />
+            )}    
+            ItemSeparatorComponent={CustomListItemsSeperator}
+            // refreshing={refreshing}
+            // onRefresh={() => {
+            //     messages([
+            //         {
+            //             id: 1,
+            //             title: "Ammar",
+            //             description: "Edge Runner",
+            //             image: require("../../assets/ammar.jpg")
+            //         },
+            //     ])
+            // }}  
         />
     </CustomScreen>
     
