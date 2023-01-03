@@ -27,7 +27,6 @@ const CustomAccountScreen = () => {
 
   return (
     <CustomScreen>
-
         <View style={styles.container}>
             <CustomAccountComponent title="ammar khan" description="ammarkhan1904@gmail.com" image={require("../../assets/ammar.jpg")}/>
         </View>
@@ -50,9 +49,9 @@ const CustomAccountScreen = () => {
             />
         </View> */}
 
-        <View style={styles.logout}>
+        {/* <View style={styles.logout}>
             <CustomListItems title="Logout" color="yellow"/>
-        </View>
+        </View> */}
 
 
     </CustomScreen>

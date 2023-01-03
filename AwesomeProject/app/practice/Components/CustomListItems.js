@@ -1,23 +1,21 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, TouchableHighlight, View } from 'react-native'
 import React from 'react'
 import colors from '../../config/colors'
 import CustomText from './CustomText'
 
-const CustomListItems = ({ title , subTitle, image, IconComponent}) => {
+const CustomListItems = ({ title , subTitle, image, IconComponent, onPress }) => {
   return (
-    <>
-    <View style={styles.container}>
-      {IconComponent}
-      <Image 
-        style={styles.image}
-        source={image}
-      />
-      <View style={styles.textContainer}>
-        <CustomText style={styles.title}>{title}</CustomText>
-        <CustomText style={styles.subTitle}>{subTitle}</CustomText>
+    <TouchableHighlight underlayColor={colors.lightgray} onPress={onPress} >
+      <View style={styles.container}>
+        {IconComponent}
+        {image && <Image style={styles.image} source={image}/>}
+
+        <View style={styles.textContainer}>
+          <CustomText style={styles.title}>{title}</CustomText>
+          {subTitle && <CustomText style={styles.subTitle}>{subTitle}</CustomText>}
+        </View>
       </View>
-    </View>
-    </>
+    </TouchableHighlight>
   )
 }
 

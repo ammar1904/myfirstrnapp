@@ -3,14 +3,14 @@ import React from 'react'
 import colors from '../../config/colors'
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 
-const CustomIcon = ({ iconName, iconColor, size , color}) => {
+const CustomIcon = ({ iconName, iconColor="#fff", size=40 , backgroundColor="#000" }) => {
   return (
     <View 
       style={{
         width: size, 
         height: size, 
-        borderRadius: size/2, 
-        backgroundColor: colors[color],
+        borderRadius: size / 2, 
+        backgroundColor,
         justifyContent: 'center',
         alignItems: 'center'
         }}>

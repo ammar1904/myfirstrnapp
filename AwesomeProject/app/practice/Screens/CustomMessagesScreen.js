@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import React, { useState } from 'react'
+import React from 'react'
 import { FlatList } from 'react-native'
 import CustomListItems from '../Components/CustomListItems'
 import CustomScreen from '../Components/CustomScreen'
@@ -21,10 +21,7 @@ const messages = [
 ]
 
 const CustomMessagesScreen = () => {
-
-    //const [refreshing, setRefreshing] = useState(false)
   return (
-
     <CustomScreen>
         <FlatList
             data={messages}
@@ -37,21 +34,9 @@ const CustomMessagesScreen = () => {
                     onPress={() => console.log("message selected", item)}    
                 />
             )}    
-            ItemSeparatorComponent={CustomListItemsSeperator}
-            // refreshing={refreshing}
-            // onRefresh={() => {
-            //     messages([
-            //         {
-            //             id: 1,
-            //             title: "Ammar",
-            //             description: "Edge Runner",
-            //             image: require("../../assets/ammar.jpg")
-            //         },
-            //     ])
-            // }}  
+            ItemSeparatorComponent={CustomListItemsSeperator}  
         />
-    </CustomScreen>
-    
+    </CustomScreen>  
   )
 }
 
