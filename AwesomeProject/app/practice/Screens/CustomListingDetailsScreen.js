@@ -2,6 +2,7 @@ import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import CustomText from '../Components/CustomText'
 import colors from '../../config/colors'
+import CustomListItems from '../Components/CustomListItems'
 
 const CustomListingDetailsScreen = () => {
   return (
@@ -12,6 +13,12 @@ const CustomListingDetailsScreen = () => {
             <CustomText style={styles.title}>Red jacket for sale</CustomText>
             <CustomText style={styles.subTitle}>$100</CustomText>
         </View>
+
+        <CustomListItems 
+            image={require('../../assets/ammar.jpg')}
+            title="Ammar Khan"
+            subTitle="5 listings"
+        />
 
     </View>
   )
@@ -32,7 +39,6 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 24,
         fontWeight: "600",
-        //marginBottom: 10,
     },
 
     subTitle: {
