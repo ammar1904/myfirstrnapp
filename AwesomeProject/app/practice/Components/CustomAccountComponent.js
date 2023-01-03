@@ -45,6 +45,5 @@ const styles = StyleSheet.create({
     description: {
         color: colors.grey,
         fontSize: 20,
-        fontWeight: "500"
     }
 })
