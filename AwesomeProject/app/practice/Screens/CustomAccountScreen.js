@@ -5,6 +5,7 @@ import CustomAccountComponent from '../Components/CustomAccountComponent'
 import CustomListItems from '../Components/CustomListItems'
 import CustomScreen from '../Components/CustomScreen'
 import CustomIcon from '../Components/CustomIcon'
+import CustomListItemsSeperator from '../Components/CustomListItemsSeperator'
 
 const CustomAccountScreen = () => {
 
@@ -13,14 +14,14 @@ const CustomAccountScreen = () => {
             title: 'My listings',
             icon: {
                 name: "format-list-bulleted",
-                backgroundColor: "primary"
+                backgroundColor: colors.primary
             }
         },
         {
             title: 'My Messages',
             icon: {
                 name: "email",
-                backgroundColor: "secondary"
+                backgroundColor: colors.secondary
             }
         },
     ]
@@ -32,26 +33,27 @@ const CustomAccountScreen = () => {
         </View>
 
 
-        {/* <View  style={styles.container}>
+        <View  style={styles.container}>
             <FlatList 
                 data={menuItem}
                 keyExtractor={menuItem => menuItem.title}
+                ItemSeparatorComponent={ <CustomListItemsSeperator/> }
                 renderItem={({ item }) => 
                     <CustomListItems 
                         title={item.title}
                         IconComponent={
                             <CustomIcon 
                                 iconName={item.icon.name}
-                                color={item.icon.backgroundColor}
+                                backgroundColor={item.icon.backgroundColor}
                             />
                         }                        
                     />}
             />
-        </View> */}
+        </View>
 
-        {/* <View style={styles.logout}>
-            <CustomListItems title="Logout" color="yellow"/>
-        </View> */}
+        <View >
+            <CustomListItems title="Logout" IconComponent={ <CustomIcon iconName="logout" backgroundColor={colors.yellow} />}/>
+        </View>
 
 
     </CustomScreen>

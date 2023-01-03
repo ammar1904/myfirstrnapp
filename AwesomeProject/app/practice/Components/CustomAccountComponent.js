@@ -37,11 +37,14 @@ const styles = StyleSheet.create({
 
     title: {
         color: colors.black,
-        fontSize: 20,
+        fontSize: 24,
+        fontWeight: "500",
         marginBottom: 5
     },
 
     description: {
         color: colors.grey,
+        fontSize: 20,
+        fontWeight: "500"
     }
 })

@@ -56,7 +56,7 @@ const App = () => {
       {/* <CustomWelcomeScreen /> */}
       {/* <CustomViewScreen /> */}
       {/* <CustomListingDetailsScreen /> */}
-      {/* <CustomAccountScreen /> */}
+      <CustomAccountScreen />
       {/* <CustomListingScreen /> */}
       {/* <CustomMessagesScreen /> */}
       {/* <CustomTextInput name="email" placeholder="Username" color="black" size={30} /> */}
@@ -64,7 +64,7 @@ const App = () => {
       {/* <CustomRegisterScreen /> */}
       {/* <CustomListingEditScreen /> */}
       {/* <CustomEditScreen /> */}
-      <ZenPractice />
+      {/* <ZenPractice /> */}
 
     </SafeAreaView>
   )

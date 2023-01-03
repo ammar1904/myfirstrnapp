@@ -23,10 +23,10 @@ export default CustomListItems
 
 const styles = StyleSheet.create({
     container: {
-        alignItems: 'center',
         flexDirection: 'row',
-        marginTop: 10,
-        padding: 20
+
+        padding: 20,
+        backgroundColor: colors.white
     },
 
     image: {
