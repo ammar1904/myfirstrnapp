@@ -1,15 +1,18 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import CustomIcon from './CustomIcon'
 import colors from '../../config/colors'
 
-const CustomListItems = ({ title , color}) => {
+const CustomListItems = ({ title , IconComponent}) => {
   return (
+    <>
     <View style={styles.container}>
-        <CustomIcon color={color} size={50}/>
-        <Text style={{paddingLeft: 10, fontSize: 17, color: colors.black}}>{title}</Text>
+      {IconComponent}
     </View>
 
+    <View style={styles.textContainer}>
+        <Text style={{paddingLeft: 10, fontSize: 17, color: colors.black}}>{title}</Text>
+    </View>
+    </>
   )
 }
 
@@ -22,5 +25,8 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
 
-
+    textContainer: {
+      marginLeft: 10,
+      justifyContent: "center"
+    }
 })

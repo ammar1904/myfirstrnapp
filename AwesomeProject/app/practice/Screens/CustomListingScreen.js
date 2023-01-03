@@ -20,6 +20,24 @@ const CustomListingScreen = () => {
             title: "Umrah Package for sale",
             price: 2000,
             image: require("../../assets/aaqib.jpg")
+        },
+        {
+            id: 3,
+            title: "NFT for sale",
+            price: 300,
+            image: require("../../assets/ammar.jpg")
+        },
+        {
+            id: 4,
+            title: "Healthy Puppiii for sale",
+            price: 20000,
+            image: require("../../assets/pappi.jpg")
+        },
+        {
+            id: 5,
+            title: "Sexy shaikh in good condition for sale",
+            price: 2000,
+            image: require("../../assets/shaikh.jpg")
         }
     ]
   return (

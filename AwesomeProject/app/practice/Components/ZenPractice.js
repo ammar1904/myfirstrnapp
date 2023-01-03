@@ -3,6 +3,8 @@ import React, { useState } from 'react'
 import CustomScreen from './CustomScreen'
 import CustomAppPicker from './CustomAppPicker'
 import CustomTextInput from './CustomTextInput'
+import CustomIcon from './CustomIcon'
+import colors from '../../config/colors'
 
 const ZenPractice = () => {
 
@@ -25,7 +27,7 @@ const ZenPractice = () => {
 
   return (
     <CustomScreen>
-        {/* <Switch value={isNew} onValueChange={isNew => setIsNew(isNew)}/> */}
+        <Switch value={isNew} onValueChange={isNew => setIsNew(isNew)}/>
         <CustomAppPicker 
             name="table-of-contents" 
             color='black' size={30} 
@@ -35,6 +37,7 @@ const ZenPractice = () => {
             onSelectItem={(item) => setCategory(item)} 
         />
         <CustomTextInput name="email" color='black' size={30} placeholder='email'/>
+        <CustomIcon iconName="email" iconColor="black" size={40} color="primary"/>
     </CustomScreen>
   )
 }
