@@ -61,7 +61,7 @@ const App = () => {
       {/* <CustomTextInput name="email" placeholder="Username" color="black" size={30} /> */}
       {/* <CustomLoginScreen /> */}
       {/* <CustomRegisterScreen /> */}
-      <CustomListingEditScreen />
+      {/* <CustomListingEditScreen /> */}
       {/* <ZenPractice /> */}
 
     </SafeAreaView>

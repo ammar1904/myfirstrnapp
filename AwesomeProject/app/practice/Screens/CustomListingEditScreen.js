@@ -45,7 +45,7 @@ const CustomListingEditScreen = () => {
                 items={categories}
                 name="category"
                 placeholder="Category"
-                width="50%"
+                width="50%"   
             />
             <CustomFormField
                 maxLength={255}
