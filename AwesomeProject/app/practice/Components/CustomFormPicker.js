@@ -4,13 +4,14 @@ import { useFormikContext } from 'formik'
 import CustomErrorMessage from './CustomErrorMessage'
 import CustomAppPicker from './CustomAppPicker'
 
-const CustomFormPicker = ( { items, name, placeholder } ) => {
+const CustomFormPicker = ( { items, name, placeholder, width } ) => {
 
     const { errors, setFieldValue, touched, values } = useFormikContext()
   return (
 
     <>
         <CustomAppPicker
+            width={width}
             items={items}
             onSelectItem={(item) => setFieldValue(name, item)}
             placeholder={placeholder}

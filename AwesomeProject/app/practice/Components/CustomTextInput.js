@@ -3,9 +3,9 @@ import React from 'react'
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 import colors from '../../config/colors'
 
-const CustomTextInput = ({ iconName, color, size, ...otherProps }) => {
+const CustomTextInput = ({ iconName, color, size, width= "100%", ...otherProps }) => {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { width }]}>
         <MaterialCommunityIcons color={colors[color]} size={size} name={iconName} style={styles.icon} />
         <TextInput
           placeholderTextColor={colors.black} 
@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         backgroundColor: colors.lightgray,
         borderRadius: 30,
-        width: "100%",
         height:60,
         paddingLeft: 15,
         alignItems:'center',

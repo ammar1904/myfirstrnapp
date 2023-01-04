@@ -5,14 +5,14 @@ import colors from '../../config/colors'
 import CustomText from './CustomText'
 import PickerItems from './PickerItems'
 
-const CustomAppPicker = ({ name, color, placeholder, size, onSelectItem, items, selectedItem,  ...otherProps }) => {
+const CustomAppPicker = ({ name, color, placeholder, size, onSelectItem, items, selectedItem, width="100%" }) => {
 
     const [modalVisible, setModalVisible] = useState(false)
 
   return (
     <>
     <TouchableOpacity onPress={ () => setModalVisible(true) }>
-    <View style={styles.container}>
+    <View style={[styles.container, { width }]}>
         <MaterialCommunityIcons color={color} size={size} name={name} style={styles.icon} placeholder={placeholder}/>
         { selectedItem ? (<CustomText style={styles.text}>{selectedItem.label}</CustomText>)
                         : (<CustomText style={styles.placeholder}>{placeholder}</CustomText>) }
@@ -43,7 +43,6 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         backgroundColor: colors.lightgray,
         borderRadius: 30,
-        width: "100%",
         padding: 15,
         marginVertical: 10,
     },

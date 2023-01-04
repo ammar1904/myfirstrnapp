@@ -5,13 +5,14 @@ import CustomErrorMessage from './CustomErrorMessage'
 import { useFormikContext } from 'formik'
 
 
-const CustomFormField = ({ name, ...otherProps }) => {
+const CustomFormField = ({ name, width, ...otherProps }) => {
 
     const { handleChange, setFieldTouched, touched, errors } = useFormikContext() 
 
   return (
     <>
     <CustomTextInput 
+        width={width}
         onChangeText={handleChange(name)}
         onBlur={()=> setFieldTouched(name)}
         {...otherProps}
