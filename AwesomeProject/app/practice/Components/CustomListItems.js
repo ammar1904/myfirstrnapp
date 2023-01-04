@@ -2,6 +2,7 @@ import { Image, StyleSheet, Text, TouchableHighlight, View } from 'react-native'
 import React from 'react'
 import colors from '../../config/colors'
 import CustomText from './CustomText'
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 
 const CustomListItems = ({ title , subTitle, image, IconComponent, onPress }) => {
   return (
@@ -11,9 +12,10 @@ const CustomListItems = ({ title , subTitle, image, IconComponent, onPress }) =>
         {image && <Image style={styles.image} source={image}/>}
 
         <View style={styles.textContainer}>
-          <CustomText style={styles.title}>{title}</CustomText>
-          {subTitle && <CustomText style={styles.subTitle}>{subTitle}</CustomText>}
+          <CustomText style={styles.title} numberOfLines={1} >{title}</CustomText>
+          {subTitle && <CustomText style={styles.subTitle} numberOfLines={2} >{subTitle}</CustomText>}
         </View>
+        <MaterialCommunityIcons name="chevron-right"  color={colors.grey} size={20} />
       </View>
     </TouchableHighlight>
   )
@@ -23,10 +25,10 @@ export default CustomListItems
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'row',
-
-        padding: 20,
-        backgroundColor: colors.white
+      alignItems: "center",
+      flexDirection: 'row',
+      padding: 20,
+      backgroundColor: colors.white
     },
 
     image: {
@@ -47,6 +49,7 @@ const styles = StyleSheet.create({
     },
 
     textContainer: {
+      flex: 1,
       marginLeft: 10,
       justifyContent: "center"
     }
