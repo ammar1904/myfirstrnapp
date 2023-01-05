@@ -28,7 +28,7 @@ const ZenPractice = () => {
 
   return (
     <CustomScreen>
-        {/* <Switch value={isNew} onValueChange={isNew => setIsNew(isNew)}/>
+        <Switch value={isNew} onValueChange={isNew => setIsNew(isNew)}/>
         <CustomAppPicker 
             name="table-of-contents" 
             color='black' size={30} 
@@ -38,7 +38,7 @@ const ZenPractice = () => {
             onSelectItem={(item) => setCategory(item)} 
         />
         <CustomTextInput name="email" color='black' size={30} placeholder='email'/>
-        <CustomIcon iconName="email" iconColor="black" size={50} backgroundColor={colors.primary}/> */}
+        <CustomIcon iconName="email" iconColor="black" size={50} backgroundColor={colors.primary}/>
         <CustomListItems
             title="My Title"
             //subTitle="My SubTitle"

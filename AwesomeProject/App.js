@@ -35,10 +35,11 @@ import CustomMessagesScreen from './app/practice/Screens/CustomMessagesScreen';
 import CustomWelcomeScreen from './app/practice/Screens/CustomWelcomeScreen';
 import CustomViewScreen from './app/practice/Screens/CustomViewScreen';
 import CustomListingDetailsScreen from './app/practice/Screens/CustomListingDetailsScreen';
+import ZenPractice2 from './app/practice/Components/ZenPractice2';
 
 const App = () => {
 
-  const [firstName, setFirstName] = useState('')
+  //const [firstName, setFirstName] = useState('')
 
   return (
     <SafeAreaView style={styles.SafeAreaView}>
@@ -63,7 +64,7 @@ const App = () => {
       {/* <CustomRegisterScreen /> */}
       {/* <CustomListingEditScreen /> */}
       {/* <ZenPractice /> */}
-
+      <ZenPractice2 />
     </SafeAreaView>
   )
 }
