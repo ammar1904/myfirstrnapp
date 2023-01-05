@@ -35,12 +35,25 @@ const TweetDetails = ({ route })=> (
 
 const Stack = createNativeStackNavigator()
 const StackNavigator = () => (
-    <Stack.Navigator>
-        <Stack.Screen name="Tweets" component={Tweets}/>
+    <Stack.Navigator
+        screenOptions={{
+            headerTitleAlign: "center",
+            headerStyle: { backgroundColor: "dodgerblue"},
+            headerTintColor: "white",
+        }}
+    >
+        <Stack.Screen
+            name="Tweets"
+            component={Tweets}
+            // options={{
+            //     headerStyle : { backgroundColor: "tomato"},
+            //     headerTitleAlign: "center",
+            // }}
+            />
         <Stack.Screen
             name="TweetDetails"
             component={TweetDetails}
-            options={{ title: 'Tweet Details Screen'}}
+            options={{ title: 'Tweet Details'}}
             // options={ ({route}) => ({ title: route.params.id })} #This is not working, will need to ask Usama about is tomorrow.
             />
     </Stack.Navigator>
