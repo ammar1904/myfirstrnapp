@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer, useNavigation } from '@react-navigation/native'
 
 const Link = () => {
+    
     const navigation = useNavigation()
 
     return(
@@ -18,12 +19,7 @@ const Link = () => {
 const Tweets = ({ navigation }) => (
     <CustomScreen>
         <Text>Tweets</Text>
-        {/* <Link /> */}
-        <Button 
-            title='View Tweet'
-            onPress={() => navigation.navigate("TweetDetails") }
-            />
-        
+        <Link />
     </CustomScreen>
 )
 
