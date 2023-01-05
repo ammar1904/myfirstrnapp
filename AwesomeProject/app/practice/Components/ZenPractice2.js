@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer, useNavigation } from '@react-navigation/native'
 
 const Link = () => {
-    
+
     const navigation = useNavigation()
 
     return(
@@ -19,13 +19,17 @@ const Link = () => {
 const Tweets = ({ navigation }) => (
     <CustomScreen>
         <Text>Tweets</Text>
-        <Link />
+        {/* <Link /> */}
+        <Button 
+            title='View Tweet'
+            onPress={() => navigation.navigate('TweetDetails', {id: 1})}
+        />
     </CustomScreen>
 )
 
-const TweetDetails = ()=> (
+const TweetDetails = ({ route })=> (
     <CustomScreen>
-        <Text>TweetDetails</Text>
+        <Text>TweetDetails{route.params.id}</Text>
     </CustomScreen>
 )
 
@@ -33,7 +37,12 @@ const Stack = createNativeStackNavigator()
 const StackNavigator = () => (
     <Stack.Navigator>
         <Stack.Screen name="Tweets" component={Tweets}/>
-        <Stack.Screen name="TweetDetails" component={TweetDetails}/>
+        <Stack.Screen
+            name="TweetDetails"
+            component={TweetDetails}
+            options={{ title: 'Tweet Details Screen'}}
+            // options={ ({route}) => ({ title: route.params.id })} #This is not working, will need to ask Usama about is tomorrow.
+            />
     </Stack.Navigator>
 )
 
