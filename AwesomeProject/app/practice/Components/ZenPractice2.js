@@ -2,6 +2,7 @@ import { Button, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import CustomScreen from './CustomScreen'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { NavigationContainer, useNavigation } from '@react-navigation/native'
 
 const Link = () => {
@@ -59,10 +60,21 @@ const StackNavigator = () => (
     </Stack.Navigator>
 )
 
+const Account = () => <CustomScreen><Text>Account</Text></CustomScreen>
+
+const Tab = createBottomTabNavigator()
+const TabNavigator = () => (
+    <Tab.Navigator>
+        <Tab.Screen name= "Feed" component={Tweets}/>
+        <Tab.Screen name= "Account" component={Account}/>
+    </Tab.Navigator>
+)
+
 const ZenPractice2 = () => {
   return (
     <NavigationContainer>
-        <StackNavigator />
+        {/* <StackNavigator /> */}
+        <TabNavigator />
     </NavigationContainer>
   )
 }
