@@ -1,9 +1,10 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, Text, TouchableWithoutFeedback, View } from 'react-native'
 import React from 'react'
 import colors from '../../config/colors'
 
-const CustomCard = ({ title, subTitle, image }) => {
+const CustomCard = ({ title, subTitle, image, onPress }) => {
   return (
+    <TouchableWithoutFeedback onPress={onPress}>
     <View style={styles.container}>
         <Image style={styles.image} source={image}/>
         <View style={styles.textContainer}>
@@ -11,6 +12,7 @@ const CustomCard = ({ title, subTitle, image }) => {
             <Text style={styles.subTitle }>{subTitle}</Text>
         </View>
     </View>
+    </TouchableWithoutFeedback>
   )
 }
 

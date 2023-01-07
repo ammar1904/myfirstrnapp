@@ -6,7 +6,7 @@ import colors from '../../config/colors'
 
 
 
-const CustomListingScreen = () => {
+const CustomListingScreen = ({ navigation }) => {
 
     const listings = [
         {
@@ -52,9 +52,11 @@ const CustomListingScreen = () => {
             <CustomCard 
             title={item.title}
             subTitle={"$" + item.price}
-            image={item.image}/>
+            image={item.image}
+            onPress={() => navigation.navigate("ListingDetails", item)}
+            />
           }
-          />
+        />
 
     </CustomScreen>
     </>

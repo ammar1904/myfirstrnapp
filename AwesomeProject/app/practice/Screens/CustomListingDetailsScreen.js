@@ -4,14 +4,16 @@ import CustomText from '../Components/CustomText'
 import colors from '../../config/colors'
 import CustomListItems from '../Components/CustomListItems'
 
-const CustomListingDetailsScreen = () => {
+const CustomListingDetailsScreen = ({ route }) => {
+
+    const Listing = route.params
   return (
     <View >
-        <Image style={styles.image} source={require('../../assets/redjacket.jpg')}/>
+        <Image style={styles.image} source={Listing.image}/>
 
         <View style={styles.detailsContainer}>
-            <CustomText style={styles.title}>Red jacket for sale</CustomText>
-            <CustomText style={styles.subTitle}>$100</CustomText>
+            <CustomText style={styles.title}>{Listing.title}</CustomText>
+            <CustomText style={styles.subTitle}>${Listing.price}</CustomText>
         </View>
 
         <CustomListItems 
