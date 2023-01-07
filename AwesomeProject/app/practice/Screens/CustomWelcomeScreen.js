@@ -3,7 +3,7 @@ import { ImageBackground, StyleSheet, View, Image } from 'react-native';
 import CustomButton from '../Components/CustomButton';
 import CustomText from '../Components/CustomText';
 
-function CustomWelcomeScreen() {
+function CustomWelcomeScreen({ navigation }) {
     return (
         <ImageBackground
             blurRadius={5}
@@ -14,8 +14,8 @@ function CustomWelcomeScreen() {
                     source={require("../../assets/logored.png")}/>
                     <CustomText style={styles.text}>Sell what you don't need</CustomText>
                 </View>
-                <CustomButton title="Login" color="primary"/>
-                <CustomButton title="Register" color="secondary" />
+                <CustomButton title="Login" color="primary" onPress={() => navigation.navigate("Login")}/>
+                <CustomButton title="Register" color="secondary" onPress={() => navigation.navigate("Register")}/>
         </ImageBackground>
     );
 }
