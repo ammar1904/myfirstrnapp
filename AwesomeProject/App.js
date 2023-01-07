@@ -5,13 +5,15 @@ import colors from './app/config/colors';
 
 import { NavigationContainer } from '@react-navigation/native';
 import AuthNavigator from './app/navigation/AuthNavigator';
+import AppNavigator from './app/navigation/AppNavigator';
 
 const App = () => {
 
   return (
     <SafeAreaView style={styles.SafeAreaView}>
       <NavigationContainer>
-        <AuthNavigator />
+        {/* <AuthNavigator /> */}
+        <AppNavigator />
       </NavigationContainer>
     </SafeAreaView>
   )
