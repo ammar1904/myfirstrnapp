@@ -7,7 +7,7 @@ import CustomScreen from '../Components/CustomScreen'
 import CustomIcon from '../Components/CustomIcon'
 import CustomListItemsSeperator from '../Components/CustomListItemsSeperator'
 
-const CustomAccountScreen = () => {
+const CustomAccountScreen = ({ navigation }) => {
 
     const menuItem = [
         {
@@ -22,7 +22,8 @@ const CustomAccountScreen = () => {
             icon: {
                 name: "email",
                 backgroundColor: colors.secondary
-            }
+            },
+            targetScreen: "Messages"
         },
     ]
 
@@ -46,7 +47,8 @@ const CustomAccountScreen = () => {
                                 iconName={item.icon.name}
                                 backgroundColor={item.icon.backgroundColor}
                             />
-                        }                        
+                        }
+                        onPress={() => navigation.navigate(item.targetScreen)}                        
                     />}
             />
         </View>
