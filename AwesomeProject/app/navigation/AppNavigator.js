@@ -7,6 +7,7 @@ import CustomListingEditScreen from '../practice/Screens/CustomListingEditScreen
 import FeedNavigation from './FeedNavigation'
 import AccountNavigator from './AccountNavigator'
 import NewListingButton from './NewListingButton'
+import routes from './routes'
 
 const Tab = createBottomTabNavigator()
 
@@ -24,7 +25,7 @@ const AppNavigator = () => (
             name='ListingEdit' 
             component={CustomListingEditScreen} 
             options={( { navigation } ) => ({
-                tabBarButton: () => <NewListingButton onPress={() => navigation.navigate("ListingEdit") }/>,
+                tabBarButton: () => <NewListingButton onPress={() => navigation.navigate(routes.LISTING_EDIT) }/>,
                 tabBarIcon: ({ color, size }) => 
                     <MaterialCommunityIcons name='plus-circle' color={color} size={size}/>
             })}/>

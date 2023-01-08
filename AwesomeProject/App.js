@@ -6,12 +6,13 @@ import colors from './app/config/colors';
 import { NavigationContainer } from '@react-navigation/native';
 import AuthNavigator from './app/navigation/AuthNavigator';
 import AppNavigator from './app/navigation/AppNavigator';
+import navigationTheme from './app/navigation/navigationTheme';
 
 const App = () => {
 
   return (
     <SafeAreaView style={styles.SafeAreaView}>
-      <NavigationContainer>
+      <NavigationContainer theme={navigationTheme}>
         {/* <AuthNavigator /> */}
         <AppNavigator />
       </NavigationContainer>

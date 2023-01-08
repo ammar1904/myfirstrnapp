@@ -2,6 +2,7 @@ import React from 'react';
 import { ImageBackground, StyleSheet, View, Image } from 'react-native';
 import CustomButton from '../Components/CustomButton';
 import CustomText from '../Components/CustomText';
+import routes from '../../navigation/routes';
 
 function CustomWelcomeScreen({ navigation }) {
     return (
@@ -14,8 +15,8 @@ function CustomWelcomeScreen({ navigation }) {
                     source={require("../../assets/logored.png")}/>
                     <CustomText style={styles.text}>Sell what you don't need</CustomText>
                 </View>
-                <CustomButton title="Login" color="primary" onPress={() => navigation.navigate("Login")}/>
-                <CustomButton title="Register" color="secondary" onPress={() => navigation.navigate("Register")}/>
+                <CustomButton title="Login" color="primary" onPress={() => navigation.navigate(routes.LOGIN)}/>
+                <CustomButton title="Register" color="secondary" onPress={() => navigation.navigate(routes.REGISTER)}/>
         </ImageBackground>
     );
 }

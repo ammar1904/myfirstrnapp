@@ -3,6 +3,7 @@ import React from 'react'
 import CustomScreen from '../Components/CustomScreen'
 import CustomCard from '../Components/CustomCard'
 import colors from '../../config/colors'
+import routes from '../../navigation/routes'
 
 
 
@@ -53,7 +54,7 @@ const CustomListingScreen = ({ navigation }) => {
             title={item.title}
             subTitle={"$" + item.price}
             image={item.image}
-            onPress={() => navigation.navigate("ListingDetails", item)}
+            onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
             />
           }
         />
